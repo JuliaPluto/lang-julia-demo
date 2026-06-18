@@ -1,4 +1,9 @@
-# lang-julia demo — CodeMirror 6 vs. legacy CM5 Julia highlighting
+# Vibe coded demo site: CodeMirror 6 vs. legacy CM5 Julia highlighting: [juliapluto.github.io/lang-julia-demo/](https://juliapluto.github.io/lang-julia-demo/)
+
+
+
+
+> Warning: this content is all 🤖-generated.
 
 A tiny [Vite](https://vitejs.dev) site that puts two CodeMirror 6 editors
 side by side, both showing the same chunk of modern Julia and sharing the

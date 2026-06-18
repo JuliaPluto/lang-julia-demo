@@ -1,0 +1,206 @@
+:root {
+  --bg: #0d1117;
+  --panel: #161b22;
+  --panel-2: #11161d;
+  --border: #232b36;
+  --text: #e6edf3;
+  --muted: #8b98a5;
+  --julia-purple: #9558b2;
+  --julia-red: #cb3c33;
+  --julia-green: #389826;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background:
+    radial-gradient(1200px 600px at 15% -10%, rgba(149, 88, 178, 0.18), transparent 60%),
+    radial-gradient(1000px 500px at 85% -10%, rgba(56, 152, 38, 0.14), transparent 60%),
+    var(--bg);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  min-height: 100vh;
+}
+
+header {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 48px 24px 8px;
+  text-align: center;
+}
+
+h1 {
+  font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+  margin: 0 0 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+h1 code {
+  background: linear-gradient(90deg, var(--julia-red), var(--julia-purple), var(--julia-green));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-family: "SF Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.logo-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.dot-1 { background: var(--julia-red); }
+.dot-2 { background: var(--julia-green); }
+.dot-3 { background: var(--julia-purple); }
+
+.tagline {
+  max-width: 720px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+.tagline a {
+  color: #a78bfa;
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+main {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 16px 24px 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 20px;
+}
+
+@media (max-width: 920px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pane {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+.pane-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border);
+  background: var(--panel-2);
+}
+
+.pane-head-modern {
+  border-bottom-color: rgba(149, 88, 178, 0.5);
+}
+.pane-head-legacy {
+  border-bottom-color: rgba(120, 130, 140, 0.4);
+}
+
+.pane-titles h2 {
+  margin: 0;
+  font-size: 0.98rem;
+}
+.pane-titles h2 code {
+  font-family: "SF Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color: var(--text);
+}
+.pane-titles p {
+  margin: 2px 0 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 4px 9px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.badge-new {
+  background: linear-gradient(90deg, var(--julia-purple), var(--julia-green));
+  color: #fff;
+}
+.badge-old {
+  background: #2b333d;
+  color: #9fb0bd;
+  border: 1px solid #3a444f;
+}
+
+/* Editors grow to fit their content — the whole page scrolls instead of a
+   nested scrollbar inside each pane. */
+.editor {
+  overflow: visible;
+}
+
+/* CodeMirror surface */
+.cm-editor {
+  background: transparent;
+  font-size: 13.5px;
+}
+.cm-editor .cm-scroller {
+  font-family: "SF Mono", "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  line-height: 1.6;
+}
+.cm-editor .cm-gutters {
+  background: transparent;
+  border-right: 1px solid var(--border);
+  color: #505b66;
+}
+.cm-editor .cm-activeLineGutter {
+  background: rgba(149, 88, 178, 0.12);
+  color: #c7b3da;
+}
+.cm-editor .cm-activeLine {
+  background: rgba(255, 255, 255, 0.03);
+}
+.cm-editor.cm-focused {
+  outline: none;
+}
+.cm-editor .cm-content {
+  caret-color: #fff;
+}
+.cm-editor .cm-cursor {
+  border-left-color: #fff;
+}
+.cm-editor .cm-matchingBracket {
+  background: rgba(149, 88, 178, 0.35);
+  outline: 1px solid rgba(149, 88, 178, 0.6);
+  color: inherit !important;
+}
+
+footer {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 8px 24px 56px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+footer code {
+  color: #c7b3da;
+  font-family: "SF Mono", ui-monospace, monospace;
+}

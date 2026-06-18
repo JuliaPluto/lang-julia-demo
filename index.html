@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lang-julia — CodeMirror 6 syntax highlighting for Julia</title>
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>
+        <span class="logo-dot dot-1"></span>
+        <span class="logo-dot dot-2"></span>
+        <span class="logo-dot dot-3"></span>
+        <code>@plutojl/lang-julia</code>
+      </h1>
+      <p class="tagline">
+        A fresh CodeMirror&nbsp;6 Julia parser built on a real
+        <a href="https://github.com/JuliaPluto/lezer-julia">Lezer grammar</a> —
+        side by side with the legacy CodeMirror&nbsp;5 stream mode that most
+        CM6 projects still use today.
+      </p>
+      <p class="hint">Type in either editor — they stay in sync so you can compare highlighting live. ✨</p>
+    </header>
+
+    <main>
+      <section class="pane">
+        <div class="pane-head pane-head-modern">
+          <span class="badge badge-new">NEW</span>
+          <div class="pane-titles">
+            <h2><code>@plutojl/lang-julia</code></h2>
+            <p>Lezer grammar &middot; full syntax tree &middot; precise tokens</p>
+          </div>
+        </div>
+        <div id="editor-modern" class="editor"></div>
+      </section>
+
+      <section class="pane">
+        <div class="pane-head pane-head-legacy">
+          <span class="badge badge-old">LEGACY</span>
+          <div class="pane-titles">
+            <h2><code>@codemirror/legacy-modes/mode/julia</code></h2>
+            <p>Ported CodeMirror&nbsp;5 stream parser &middot; line-based regex</p>
+          </div>
+        </div>
+        <div id="editor-legacy" class="editor"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        Both editors share the exact same colorful
+        <code>HighlightStyle</code> — the only difference is the language
+        parser. Because <code>@plutojl/lang-julia</code> builds a full syntax
+        tree, it can tell apart things the line-based legacy mode cannot:
+        <strong>function definitions</strong> (yellow) vs.
+        <strong>calls</strong> (cyan), <strong>type</strong> and
+        <strong>module definitions</strong>, <strong>keyword arguments</strong>,
+        macros, integer vs. float literals, string interpolation, regex / raw /
+        byte strings, and every flavor of keyword and operator.
+      </p>
+    </footer>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
